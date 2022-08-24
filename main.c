@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 void boardInit(char scenery[10][10], int wPosition[2]) {
     for (int i = 0; i < 10; i++) {
@@ -42,12 +43,14 @@ int main()
     boardInit(scenery, wPosition);
     
     //--> começa loop
-    printScenery(scenery);
+
+        printScenery(scenery);
     
-    //faz o movimento
-    char movement;
-    printf("faça o movimento(a, w, s, d): ");
-    scanf("%c", &movement);
-    
+        //faz o movimento
+        char movement;
+        printf("faça o movimento(a, w, s, d): ");
+        scanf("%c", &movement);
+        movement = tolower(movement);
+
     return 0;
 }
